@@ -1,0 +1,33 @@
+.header {
+  text-align: center;
+  margin: 1rem;
+  font-weight: bold;
+  font-size: 18px;
+}
+.form-group {
+  width: 60%;
+  margin: 0 auto;
+}
+.submitBtn {
+  width: 28%;
+  font-size: 14px;
+  background: #07c;
+}
+.submit-btn {
+  margin-top: 1rem;
+  text-align: center;
+}
+input {
+  font-size: 14px;
+}
+.toast-message {
+  text-align: center;
+  border: 1px solid #172733;
+  width: 44%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding: 1rem;
+  background: #172733;
+  color: white;
+}

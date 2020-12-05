@@ -1,0 +1,49 @@
+<div class="header">
+  <div class="header-list">
+    <em class="fa fa-home"></em>
+    <span class="title">
+      List of Colleges
+    </span>
+  </div>
+</div>
+<div class="mainDiv" style="background-image: url('/Users/chaitanya5/Documents/Name-Screening-CRUISE/crui-ui/src/assets/download.jpeg')">
+  <div class="card" *ngFor="let item of mainListOfLocations; let i = index">
+    <div class="main-div">
+    <div class="header-part" style="display: flex">
+      <div class="location-name col-md-11">{{ item.cityName }}</div>
+      <div class="col-md-1 arrow-mark" (click)="toggle(item)">
+        <em class="fa fa-angle-down" *ngIf="item.isToggleExpanded"></em>
+        <em class="fa fa-angle-up" *ngIf="!item.isToggleExpanded"></em>
+      </div>
+    </div>
+    <div *ngIf="item.isToggleExpanded" class="list-of-locations">
+      <div *ngFor="let college of item.listOfColleges" class="collge-list">
+        <input type="checkbox" (click)="onCheckBoxClick(college)">
+        <strong style="font-weight: bold">{{college.collegeName}}</strong>
+        <div class="view-more" (click)="onViewMoreClick(college)">{{college.viewMore}}</div>
+        <div>{{college.contactNumber}}</div>
+        <div>{{college.collegeEmail}}</div>
+        <div *ngIf="college.isViewMoreClicked">
+          <span>
+            <p>Description:</p>
+            <span>
+              CBIT was established in 1979.[4] The institute is affiliated to Osmania University,
+              originally with three undergraduate programs and an intake of 200 students.
+              By 2014 this had grown to nine undergraduate and seven postgraduate courses with a total intake of 9000 students.
+              It was inaugurated by late Dr. Marri Chenna Reddy.
+          </span>
+          </span>
+          <span>
+            <p>Rating:</p>
+            <span>{{college.rating}}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="submit-button">
+    <button class="submit" (click)="onSubmit()">Apply</button>
+  </div>
+</div>
+

@@ -1,0 +1,42 @@
+<div *ngIf="isSubmittedSuccessfully">
+  <div class="toast-message"> {{candidateForm.value.candidateName}} {{candidateForm.value.id}} is successfully submitted at location {{candidateForm.value.selectedLocations | json }}</div>
+</div>
+<div class="header col-md-8">Candidate Details</div>
+<div class="form-group" style="width: 70%;">
+  <form [formGroup]="candidateForm" class="form-group">
+    <!-- Name -->
+    <label for="candidateName">Name</label>
+    <input type="text" class="form-control" placeholder="candidateName" id="candidateName" formControlName="candidateName">
+    <!-- Gender -->
+    <label for="candidateGender">Gender</label>
+    <select class="form-control" formControlName="gender" placeholder="Gender">
+      <option>Male</option>
+      <option>Female</option>
+    </select>
+    <!-- Age -->
+    <label for="age">Age</label>
+    <input type="text" class="form-control" placeholder="Age" id="candidateAge" formControlName="age">
+    <!-- Marks -->
+    <label for="marks">Marks</label>
+    <input type="text" class="form-control" placeholder="Marks" id="marks" formControlName="marks">
+    <!-- percentage -->
+    <label for="percentage">Percentage</label>
+    <input type="text" class="form-control" placeholder="percentage" id="percentage" formControlName="percentage">
+    <!-- email -->
+    <label for="email">Email</label>
+    <input type="email" class="form-control" placeholder="Email" id="email" formControlName="email">
+    <!-- selectedCourse -->
+    <label for="selectedCourse">Course</label>
+    <select class="form-control" formControlName="selectedCourse" placeholder="Courses">
+      <option>--Select--</option>
+      <option>Computer Science and Engineering</option>
+      <option>Electrical Science and Engineering</option>
+      <option>Mechanical Engineering</option>
+      <option>Information Technology</option>
+    </select>
+    <!-- button -->
+    <div class="submit-btn">
+      <button class="btn btn-primary submitBtn" (click)="onSubmit(candidateForm)">Submit</button>
+    </div>
+  </form>
+</div>
